@@ -16,11 +16,8 @@ class Post(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
 
     def publish(self):
-        # 设置发布日期为当前时间
         self.published_date = timezone.now()
-        # 保存修改
         self.save()
 
     def __str__(self):
-        # 返回对象的标题
         return self.title
